@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+</style>
+</head>
+<body>
+	
+	<table>
+		<tr>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+			<th>인천거주여부</th>
+
+		</tr>
+		<tr th:each="dto: ${list}">
+			<td th:text="${dto.name}"></td>
+			<td th:text="${dto.age}"></td>
+			<td th:text="${dto.address}"></td>
+			<td th:text="${#strings.contains(dto.address,'인천')}?거주:비거주"></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -5,9 +5,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>조건문</h1>
+	
 	<th:block th:each="dto: ${list}">
-	<p th:if="${dto.no == 2}" th:text="${dto}"> </p>
+		<p th:unless="${dto.no == 2}" th:text="${dto}"> </p>
+	</th:block>
+	
+	
+	<h1>삼항연산자</h1>
+	
+	<th:block th:each="dto: ${list}">
+		
+		<p th:text="${dto.no==2}? ${dto}: --- "></p>
+		
 	</th:block>
 
 </body>
